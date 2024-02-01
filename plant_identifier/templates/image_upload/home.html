@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload Plant Image</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeeGPT</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}" >
 </head>
 <body>
+    <!-- Navbar Selection -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#home" id="navbar-title">BeeGPT</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="#upload" class="navbar-links" id="home-page">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#tutorial" class="navbar-links" id="tutorial-page">Tutorial</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#biodiversity" class="navbar-links" id="biodiversity-page">Biodiversity</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main Section -->
+    <div class="main" id="about">
+        <div class="main-container">
+            <div class="main-content">
+                <h1>BeeGPT</h1>
+                <h2>Identify Plants in Seconds!</h2>
+                <p>Learn about their ecosystem and biodiversity</p>
+            </div>
+            <div class="main-img-div">
+                <div class="main-img-card">
+                    <img src="{% static 'images/image1.webp' %}" alt="Plant Background">
+                </div>
+            </div>
+        </div>
+    </div>
     <h2>Upload an image of a plant</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
