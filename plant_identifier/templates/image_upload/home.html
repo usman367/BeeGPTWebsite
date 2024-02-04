@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}" >
 </head>
 <body>
-    <!-- Navbar Selection -->
+    <!-- Navbar Section -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#home" id="navbar-title">BeeGPT</a>
@@ -25,26 +25,22 @@
             </ul>
         </div>
     </nav>
-    <!-- Main Section -->
-    <div class="main" id="about">
+    <!-- Intro Section -->
+    <div class="image-container">
+        <img src="{% static 'images/image1.webp' %}" alt="image">
+        <div class="overlay-text">IDENTIFY PLANTS IN SECONDS!</div>
+    </div>
+    <!-- Upload an image Section -->
+    <div class="main" id="home">
         <div class="main-container">
-            <div class="main-content">
-                <h1>BeeGPT</h1>
-                <h2>Identify Plants in Seconds!</h2>
-                <p>Learn about their ecosystem and biodiversity</p>
-            </div>
-            <div class="main-img-div">
-                <div class="main-img-card">
-                    <img src="{% static 'images/image1.webp' %}" alt="Plant Background">
-                </div>
-            </div>
+            <h1 class="main-heading"> Try BeeGPT Now! </h1>
+            <p class="main-description"> Upload an image </p>
+            <form class="main-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="upload-btn" type="submit">Upload</button>
+            </form>
         </div>
     </div>
-    <h2>Upload an image of a plant</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
 </body>
 </html>
