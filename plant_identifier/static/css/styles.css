@@ -58,6 +58,7 @@
 /* For when the pointer is on the navbar */
 .navbar-links:hover {
   color: #80e08d;
+  text-decoration: none;
   transition: all 0.3s ease;/* Wait a bit and then change the color */
   /*This transition is also then needed in the navbar_links to make it work*/
 }
@@ -75,23 +76,48 @@
   height: 100%;
 }
 
+.image-container-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .overlay-text {
   margin-top: 65px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #456146;
-  padding: 4px 8px;
-  font-size: 30px;
+  color: #000000;
+  padding: 0px 0px;
+  font-family: Garamond, serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   /* background-color: #000000; */ /* text background removed for now*/
+}
+
+.image-container-btn{
+    color: #FFFFFF;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #185c33;
+    padding: 12px 30px;
+    position: absolute;
+    margin-bottom: 250px;
+}
+
+.image-container-btn:hover {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 /*Upload an image Section*/
 .main {
-  background: #dededc;
+  background: #FFFFFF;
   padding: 70px 0;
 }
 
@@ -123,23 +149,42 @@
 }
 
 .main-form {
-    margin-top: 50px;
-    margin-left: 100px;
-    color: #000000;
-    font-size: 20px;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-form input[type="text"],
+.main-form input[type="file"],
+.main-form textarea {
+  width: calc(100% - 20px); /* Adjusts based on padding */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.main-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .upload-btn {
-    color: #FFFFFF;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #185c33;
-    margin-top: 40px;
-    margin-right: 100px;
-    padding: 12px 25px;
-    outline: none;
+  background-color: #008cba;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.upload-btn:hover {
+  background-color: #007ba7;
 }
 
 .extra-info{
@@ -152,7 +197,6 @@
     height: 40%;
     margin: 10px 0px 20px 110px;
 }
-
 
 .footer {
   background-color: #17181b;
@@ -171,7 +215,6 @@
 }
 
 .footer-description {
-  margin-left: 80px;
   font-family: "Baloo Da 2", serif;
   font-size: 1.6rem;
   color: #a7a7a7;
