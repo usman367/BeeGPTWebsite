@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <!-- Content specific to biodiversity -->
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -21,23 +26,6 @@
     />
 </head>
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#home" id="navbar-title">BeeGPT</a>
-            <ul class="navbar-menu">
-                <li class="navbar-item">
-                    <a href="#upload" class="navbar-links" id="home-page">Home</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#tutorial" class="navbar-links" id="tutorial-page">Tutorial</a>
-                </li>
-                <li class="navbar-item">
-                    <a href="#biodiversity" class="navbar-links" id="biodiversity-page">Biodiversity</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <!-- Intro Section -->
     <div class="image-container">
         <img src="{% static 'images/image1.webp' %}" alt="image">
@@ -82,16 +70,7 @@
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-description"> Leveraging AI to identify plants </p>
-            <div class="icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
+
+{% endblock %}

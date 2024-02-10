@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}BeeGPT{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}" >
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <!-- Navbar Section -->
+      <nav class="navbar">
+        <div class="navbar-container">
+            <a href=" {% url 'upload_image' %} " id="navbar-title">BeeGPT</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href=" {% url 'upload_image' %} " class="navbar-links" id="home-page">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#tutorial" class="navbar-links" id="tutorial-page">Tutorial</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'biodiversity' %}" class="navbar-links" id="biodiversity-page">Biodiversity</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+            <p class="footer-description"> Leveraging AI to identify plants </p>
+            <div class="icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+      </div>
+    </footer>
+</body>
+</html>
