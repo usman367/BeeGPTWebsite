@@ -1,11 +1,27 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> Plant Species Result </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- For google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
 <h2>Plant Species Identified:</h2>
-
+<p>{{ plant_image.species }}</p>
 </body>
 </html>
+
+{% endblock %}
