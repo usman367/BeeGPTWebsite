@@ -235,5 +235,43 @@
     min-height: 400px;
 }
 
+.identification-result-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.plant-species-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.plant-species-container h3 {
+    margin-right: 10px;
+}
+
+.plant-species {
+    font-size: 1.2rem;
+}
+
+.plant-info-container {
+    margin-top: 35px;
+}
+
+.plant-info-container p {
+    margin-top: 10px;
+}
+
+.uploaded-img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 20px;
+}
+
 
 

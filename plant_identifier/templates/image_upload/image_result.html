@@ -4,10 +4,13 @@
 
 {% block content %}
 
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Plant Species Result </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}" >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -19,11 +22,17 @@
     />
 </head>
 <body>
-<h2>Plant Species Identified:</h2>
-<p>{{ plant_image.species }}</p>
-<h3>About the Plant:</h3>
-<p>{{ plant_info }}</p>
-<img src="{{ plant_image.image.url }}" alt="Plant Image">
+    <div class="identification-result-container">
+        <div class="plant-species-container">
+            <h3>Plant Species Identified:</h3>
+            <p class="plant-species">{{ plant_image.species }}</p>
+        </div>
+        <div class="plant-info-container">
+            <h3>About the Plant:</h3>
+            <p>{{ plant_info }}</p>
+        </div>
+        <img class="uploaded-img" src="{{ plant_image.image.url }}" alt="Plant Image">
+    </div>
 </body>
 </html>
 
