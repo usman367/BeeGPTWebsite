@@ -273,5 +273,109 @@
     margin-top: 20px;
 }
 
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+    margin-right: 100px;
+  }
 
+  .navbar-menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px; /*When the menu is pressed, it brings it all the way down*/
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
 
+  .navbar-menu.active {
+    background: #FFFFFF;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar-title {
+    padding-left: 25px;
+  }
+
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #000000;
+  }
+
+  .navbar-item {
+    width: 100%;
+  }
+
+  .navbar-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar-toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+  /*The menu button changing shape*/
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .image-container-btn {
+    margin-bottom: 200px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+  }
+
+  /* This puts the icons at the top */
+  .footer-description {
+    /* We give the paragraph an order of 1, so it can't be at the top */
+    /* The order starts from 0, so the icons will then have a order of 0
+    And they'll be at the top */
+    order: 1;
+    margin-top: 1rem;
+  }
+
+    /* Increase its height */
+  .footer {
+    height: 9rem;
+  }
+}

@@ -12,6 +12,11 @@
       <nav class="navbar">
         <div class="navbar-container">
             <a href=" {% url 'upload_image' %} " id="navbar-title">BeeGPT</a>
+             <div class="navbar-toggle" id="mobile-menu">
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+             </div>
             <ul class="navbar-menu">
                 <li class="navbar-item">
                     <a href=" {% url 'upload_image' %} " class="navbar-links" id="home-page">Home</a>
@@ -40,5 +45,6 @@
             </div>
       </div>
     </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
