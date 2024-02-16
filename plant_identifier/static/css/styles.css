@@ -379,3 +379,30 @@
     height: 9rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .image-container-btn {
+    margin-bottom: 100px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+  }
+
+  /* This puts the icons at the top */
+  .footer-description {
+    /* We give the paragraph an order of 1, so it can't be at the top */
+    /* The order starts from 0, so the icons will then have a order of 0
+    And they'll be at the top */
+    order: 1;
+    margin-top: 1rem;
+  }
+
+    /* Increase its height */
+  .footer {
+    height: 12rem;
+  }
+}
