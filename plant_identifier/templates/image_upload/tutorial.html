@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<html>
+<head>
+    <title> Tutorial </title>
+    {% load static %}
+</head>
+<body>
+    <div class="main" id="main-section">
+        <div class="main-container">
+            <h1 class="main-heading"> BeeGPT Tutorial! </h1>
+            <p class="main-description"> Here's a basic tutorial on how to Identify a Plant </p>
+        </div>
+    </div>
+    <section class="tutorial-section">
+        <div class="tutorial-container grid">
+            <div>
+                <h1 class="step"> Step 1: Scroll to the home page</h1>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor cupiditate dignissimos temporibus perspiciatis quae! Suscipit qui, consectetur ea consequatur, doloribus repellendus quasi, aut corporis nam alias culpa. Nostrum, inventore accusantium! </p>
+            </div>
+            <img src="{% static 'images/image1.webp' %}" alt="">
+        </div>
+        <div class="tutorial-container grid">
+            <div>
+                <h1 class="step"> Step 2: Click on the "Choose File" Button </h1>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor cupiditate dignissimos temporibus perspiciatis quae! Suscipit qui, consectetur ea consequatur, doloribus repellendus quasi, aut corporis nam alias culpa. Nostrum, inventore accusantium! </p>
+            </div>
+            <img src="{% static 'images/image1.webp' %}" alt="">
+        </div>
+        <div class="tutorial-container grid">
+            <div>
+                <h1 class="step"> Step 3: Select your plant image </h1>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor cupiditate dignissimos temporibus perspiciatis quae! Suscipit qui, consectetur ea consequatur, doloribus repellendus quasi, aut corporis nam alias culpa. Nostrum, inventore accusantium! </p>
+            </div>
+            <img src="{% static 'images/image1.webp' %}" alt="">
+        </div>
+        <div class="tutorial-container grid">
+            <div>
+                <h1 class="step"> Step 4: Click on the "Upload" button </h1>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor cupiditate dignissimos temporibus perspiciatis quae! Suscipit qui, consectetur ea consequatur, doloribus repellendus quasi, aut corporis nam alias culpa. Nostrum, inventore accusantium! </p>
+            </div>
+            <img src="{% static 'images/image1.webp' %}" alt="">
+        </div>
+    </section>
+
+</body>
+</html>
+{% endblock %}

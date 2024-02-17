@@ -273,6 +273,35 @@
     margin-top: 20px;
 }
 
+.tutorial-section {
+    margin: 100px 0px;
+}
+.tutorial-section img {
+  width: 300px;
+  justify-self: flex-end;
+}
+
+.tutorial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 60px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.step {
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 960px) {
   .navbar-container {
     display: flex;
@@ -378,6 +407,21 @@
   .footer {
     height: 9rem;
   }
+
+  .tutorial-section{
+    text-align: center;
+  }
+
+  .tutorial-section img {
+    /* Moves the image to the center */
+    justify-self: center;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
 }
 
 @media screen and (max-width: 600px) {

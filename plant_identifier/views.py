@@ -54,3 +54,7 @@ def upload_image(request):
 # Created a new view function for the biodiversity page
 def biodiversity(request):
     return render(request, 'image_upload/biodiversity.html')
+
+
+def tutorial(request):
+    return render(request, 'image_upload/tutorial.html')

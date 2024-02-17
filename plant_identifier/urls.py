@@ -4,5 +4,6 @@ from .views import upload_image
 
 urlpatterns = [
     path('', upload_image, name='upload_image'),
-    path('biodiversity/', views.biodiversity, name='biodiversity')
+    path('biodiversity/', views.biodiversity, name='biodiversity'),
+    path('tutorial/', views.tutorial, name='tutorial')
 ]
