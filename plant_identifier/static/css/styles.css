@@ -273,12 +273,41 @@
     margin-top: 20px;
 }
 
-.tutorial-section {
-    margin: 100px 0px;
+.tutorial-main {
+  background: #FFFFFF;
+  padding: 90px 0;
 }
+
+.tutorial-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 80%;
+  text-align: center;
+}
+
+.tutorial-heading {
+  font-size: 120px;
+  margin-bottom: 24px;
+  color: #264034;
+}
+
+.tutorial-description {
+  font-size: 45px;
+  color: #357843;
+  background-size: 100%;
+}
+
+.tutorial-section {
+    margin: 70px 0px 100px 0px;
+}
+
 .tutorial-section img {
-  width: 300px;
-  justify-self: flex-end;
+  width: 400px;
+  justify-self: center;
 }
 
 .tutorial-container {
@@ -287,6 +316,7 @@
   overflow: auto;
   padding: 0 60px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .grid {
@@ -300,6 +330,7 @@
 
 .step {
   font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 960px) {
@@ -405,16 +436,38 @@
 
     /* Increase its height */
   .footer {
-    height: 9rem;
+    height: 10rem;
+  }
+
+  .tutorial-main {
+    padding-bottom: 45px;
+  }
+
+  .tutorial-heading {
+    font-size: 60px;
+    margin-bottom: 24px;
+    color: #264034;
+  }
+
+  .tutorial-description {
+    font-size: 35px;
+    color: #357843;
+    background-size: 100%;
+    margin: 0px 15px;
   }
 
   .tutorial-section{
     text-align: center;
   }
 
+  .tutorial-container {
+    margin-bottom: 70px;
+  }
+
   .tutorial-section img {
     /* Moves the image to the center */
     justify-self: center;
+    width: 300px;
   }
 
   .grid{
