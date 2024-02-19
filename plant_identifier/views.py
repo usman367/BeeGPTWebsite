@@ -1,3 +1,6 @@
+import os
+
+from django.conf import settings
 from django.shortcuts import render
 from openai import OpenAI
 from .forms import PlantImageForm
@@ -22,8 +25,8 @@ def upload_image(request):
                 api_key="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"
             )
             plant_info = ""
-            model = load_model(
-                'C://Users//usman//PycharmProjects//image_classifier//classifier//models//plantsimageclassifier2.h5')
+            model_path = os.path.join(settings.BASE_DIR, 'plant_identifier', 'models', '40EpochsTest7.keras')
+            model = load_model(model_path)
             fs = FileSystemStorage()
             uploaded_file = request.FILES['image']
             filename = fs.save(uploaded_file.name, uploaded_file)
@@ -79,7 +82,7 @@ def tutorial(request):
     return render(request, 'image_upload/tutorial.html')
 
 
-def preprocess_image(img_path, target_size=(256, 256)):
+def preprocess_image(img_path, target_size=(128, 128)):
     img = image.load_img(img_path, target_size=target_size)
     img_array = image.img_to_array(img)
     img_array = img_array / 255.0
