@@ -1,11 +1,9 @@
 import os
-
 from django.conf import settings
 from django.shortcuts import render
 from openai import OpenAI
 from .forms import PlantImageForm
 import requests
-from django.core.files.storage import FileSystemStorage
 from keras.models import load_model
 from keras.preprocessing import image
 import numpy as np
@@ -27,9 +25,7 @@ def upload_image(request):
             plant_info = ""
             model_path = os.path.join(settings.BASE_DIR, 'plant_identifier', 'models', '40EpochsTest7.keras')
             model = load_model(model_path)
-            fs = FileSystemStorage()
-            uploaded_file = request.FILES['image']
-            filename = fs.save(uploaded_file.name, uploaded_file)
+            img_path = os.path.join(settings.MEDIA_ROOT, plant_image.image.name)  # Retrieve the path to the saved image
             label_to_index = {'Bluebell': 0, 'Buttercup': 1, 'Coltsfoot': 2, 'Cowslip': 3, 'Crocus': 4, 'Daffodil': 5,
                               'Daisy': 6, 'Dandelion': 7, 'Fritillary': 8, 'Iris': 9, 'Lily Valley': 10, 'Pansy': 11,
                               'Snowdrop': 12, 'Sunflower': 13, 'Tigerlily': 14, 'Tulip': 15, 'Windflower': 16}
@@ -43,7 +39,7 @@ def upload_image(request):
                 plant_image.save()
 
                 # Preprocess the image and predict
-                processed_image = preprocess_image(fs.path(filename))
+                processed_image = preprocess_image(img_path)
                 prediction = model.predict(processed_image)
                 predicted_label = np.argmax(prediction, axis=1)
                 class_labels = list(label_to_index.keys())  # Get class labels from the label-to-index mapping
