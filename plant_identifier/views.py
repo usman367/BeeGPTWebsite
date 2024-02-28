@@ -46,7 +46,7 @@ def upload_image(request):
                 predicted_class = class_labels[predicted_label[0]]
 
                 try:
-                    prompt = f"Provide information about the biodiversity and ecosystem of the {plant_image.species}."
+                    prompt = f"Provide biodiversity information and the animals, birds and microorganisms {plant_image.species} attracts"
                     response = client.chat.completions.create(
                         model="gpt-3.5-turbo",
                         messages=[{"role": "user", "content": prompt}]
