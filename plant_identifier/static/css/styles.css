@@ -5,12 +5,19 @@
   scroll-behavior: smooth;
 }
 
+body {
+  padding-top: 70px; /* Space for the navbar */
+}
+
 .navbar {
   background: #FFFFFF;
   height: 70px;
   display: flex;
   font-size: 1rem;
   top: 0;
+  position: fixed; /* Fix the navbar at the top of the page  */
+  width: 100%; /* Ensure it spans the full width */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 .navbar-container {
@@ -23,7 +30,7 @@
   padding: 0 35px;
 }
 
-/*The color logo at the top*/
+/* The color logo at the top */
 #navbar-title {
   background-color: #456146;
   -webkit-background-clip: text;
@@ -33,6 +40,7 @@
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .navbar-menu {
@@ -334,6 +342,11 @@
 }
 
 @media screen and (max-width: 960px) {
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
   .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -418,6 +431,23 @@
     margin-bottom: 200px;
   }
 
+  .extra-info{
+    margin: 60px 0px;
+    text-align: center;
+  }
+
+  .extra-info-img{
+    width: 40%;
+    height: 40%;
+    max-height: 75px;
+    margin: 15px 0px 20px 60px;
+    item-align:center;
+  }
+
+  .bio-info-img {
+    object-fit: cover; /* Maintain image ratio */
+  }
+
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -434,9 +464,9 @@
     margin-top: 1rem;
   }
 
-    /* Increase its height */
+  /* Increase its height */
   .footer {
-    height: 10rem;
+    height: 11rem;
   }
 
   .tutorial-main {
@@ -482,6 +512,17 @@
     margin-bottom: 100px;
   }
 
+  .extra-info{
+    margin: 60px 20px;
+    text-align: center;
+  }
+
+  .extra-info-img{
+    width: 40%;
+    height: 40%;
+    margin: 10px 0px 20px 110px;
+  }
+
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -500,6 +541,6 @@
 
     /* Increase its height */
   .footer {
-    height: 12rem;
+    height: 14rem;
   }
 }
