@@ -13,11 +13,12 @@ import numpy as np
 def upload_image(request):
     if request.method == 'POST':
         form = PlantImageForm(request.POST, request.FILES)
+        predicted_class = ""
         if form.is_valid():
             plant_image = form.save()
 
             # Call to PlanetNet API
-            planet_net_species, prediction_status = identify_species_using_planet_net(plant_image)
+            planet_net_species, prediction_status = identify_species_using_plant_net(plant_image)
             if prediction_status:
                 predicted_class = identify_species_using_local_model(plant_image)
 
@@ -42,7 +43,7 @@ def tutorial(request):
     return render(request, 'image_upload/tutorial.html')
 
 
-def identify_species_using_planet_net(plant_image):
+def identify_species_using_plant_net(plant_image):
     api_url = 'https://my-api.plantnet.org/v2/identify/all'
     api_key = '2b10kJ93KxHKQXXnSGKDxuRpfe'
     files = {'images': plant_image.image}
