@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
+{% block title %} Result {% endblock %}
 
 {% block content %}
 
@@ -12,9 +12,9 @@
 <body>
     <div class="identification-result-container">
         <div class="plant-species-container">
-            <h3>Plant Species Identified:</h3>
+            <h3>Plant Species Identified by API</h3>
             <p class="plant-species">{{ plant_image.species }}</p>
-            <h3 class="model-species-heading">Predicted Class by Model:</h3>
+            <h3 class="model-species-heading">Plant Species Identified by Model</h3>
             <p class="plant-species">{{ predicted_class }}</p>
         </div>
         <div class="plant-info-container">

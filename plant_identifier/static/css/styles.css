@@ -242,7 +242,7 @@ body {
     width: 100%;
     min-height: 400px;
 }
-
+/*
 .identification-result-container {
     max-width: 600px;
     margin: auto;
@@ -283,7 +283,66 @@ body {
     max-width: 90%;
     height: auto;
     margin-top: 20px;
+}*/
+
+.identification-result-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    border-radius: 8px;
 }
+
+.plant-species-container, .plant-info-container {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+}
+
+.plant-species-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.plant-species-container h3, .model-species-heading {
+    flex-basis: 100%; /* Headings takes full width */
+    color: #333;
+}
+
+.model-species-heading {
+    margin-top: 30px;
+}
+
+.plant-species {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.plant-info-container {
+    margin-top: 35px;
+}
+
+.plant-info-container p {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.uploaded-img {
+    max-width: 95%;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
 
 .tutorial-main {
   background: #FFFFFF;
