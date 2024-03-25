@@ -27,7 +27,8 @@ def upload_image(request):
             return render(request, 'image_upload/image_result.html', {
                 'plant_image': plant_image,
                 'plant_info': plant_info,
-                'predicted_class': predicted_class if prediction_status else "Identification failed"
+                'predicted_class': predicted_class if prediction_status else "Identification failed",
+                'prediction_status': prediction_status
             })
     else:
         form = PlantImageForm()

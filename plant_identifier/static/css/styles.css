@@ -305,7 +305,7 @@ body {
 
 .plant-info-container p {
     margin-top: 10px;
-    text-align: justify;
+    text-align: center;
     line-height: 1.6;
 }
 
@@ -314,6 +314,11 @@ body {
     height: auto;
     margin-top: 30px;
     border-radius: 4px;
+}
+
+.failed-prediction {
+    color: #000000;
+    font-size: 1.5rem;
 }
 
 .tutorial-main {
