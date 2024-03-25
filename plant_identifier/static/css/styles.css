@@ -206,6 +206,21 @@ body {
     margin: 10px 0px 20px 110px;
 }
 
+.bio-info-heading {
+    margin-top: 40px;
+    text-align: center;
+    color: #333; /* Or any color that fits your design */
+}
+
+.bio-info-extra{
+    margin-top: 90px;
+}
+
+.bio-info{
+    margin: 30px 20px;
+    text-align: center;
+}
+
 .footer {
   background-color: #17181b;
   display: flex;
