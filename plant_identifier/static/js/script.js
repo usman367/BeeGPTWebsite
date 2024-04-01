@@ -1,3 +1,6 @@
+// Utilised briancodex's public GitHub repository for a responsive navbar
+// https://github.com/briancodex/html-css-js-website-smooth-scroll
+
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar-menu');
 const navLogo = document.querySelector('#navbar-title');

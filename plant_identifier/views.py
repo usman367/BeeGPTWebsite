@@ -9,21 +9,22 @@ from keras.preprocessing import image
 import numpy as np
 
 
-# Create your views here.
+# View function to redirect user to the "image_result" page once an image is uploaded, and the form is submitted
 def upload_image(request):
     if request.method == 'POST':
-        form = PlantImageForm(request.POST, request.FILES)
-        predicted_class = ""
+        form = PlantImageForm(request.POST, request.FILES)  # Instantiate the form with the image
         if form.is_valid():
             plant_image = form.save()
 
-            # Call to PlanetNet API
+            # Call the PlantNet API to identify plant species
             planet_net_species, prediction_status = identify_species_using_plant_net(plant_image)
             if prediction_status:
-                predicted_class = identify_species_using_local_model(plant_image)
+                predicted_class = identify_species_using_local_model(plant_image)  # Identify species using local model
 
+            # Retrieve plant biodiversity info, if the species has been identified
             plant_info = fetch_plant_info(planet_net_species) if prediction_status else "Information not available."
 
+            # Redirect user to the result page with the appropriate data
             return render(request, 'image_upload/image_result.html', {
                 'plant_image': plant_image,
                 'plant_info': plant_info,
@@ -35,24 +36,29 @@ def upload_image(request):
     return render(request, 'image_upload/home.html', {'form': form})
 
 
-# Created a new view function for the biodiversity page
+# Redirect user to the biodiversity page
+# Once the button is clicked in the navbar
 def biodiversity(request):
     return render(request, 'image_upload/biodiversity.html')
 
 
+# Redirect user to the tutorial page
+# Once the button is clicked in the navbar
 def tutorial(request):
     return render(request, 'image_upload/tutorial.html')
 
 
+# To identify plant species using PlantNet API
 def identify_species_using_plant_net(plant_image):
     api_url = 'https://my-api.plantnet.org/v2/identify/all'
     api_key = '2b10kJ93KxHKQXXnSGKDxuRpfe'
     files = {'images': plant_image.image}
     response = requests.post(api_url, files=files, headers={'Authorization': f'Bearer {api_key}'})
 
+    # Return the species name if the request was successful
     if response.status_code == 200:
         data = response.json()
-        common_name = data["results"][0]["species"]["commonNames"][0]
+        common_name = data["results"][0]["species"]["commonNames"][0]  # Retrieve species name from the response
         plant_image.species = common_name
         plant_image.save()
         return common_name, True
@@ -62,12 +68,13 @@ def identify_species_using_plant_net(plant_image):
         return None, False
 
 
+# To identify plant species using local model
 def identify_species_using_local_model(plant_image):
-    model_path = os.path.join(settings.BASE_DIR, 'plant_identifier', 'models', '40EpochsTest7.keras')
+    model_path = os.path.join(settings.BASE_DIR, 'plant_identifier', 'models', 'model.keras')
     model = load_model(model_path)
     img_path = os.path.join(settings.MEDIA_ROOT, plant_image.image.name)
-    processed_image = preprocess_image(img_path)
-    prediction = model.predict(processed_image)
+    processed_image = preprocess_image(img_path)  # Helper method to configue image parameters
+    prediction = model.predict(processed_image)  # Make a prediction
     predicted_label = np.argmax(prediction, axis=1)
     label_to_index = {
         'Bluebell': 0, 'Buttercup': 1, 'Coltsfoot': 2, 'Cowslip': 3, 'Crocus': 4,
@@ -80,6 +87,7 @@ def identify_species_using_local_model(plant_image):
     return predicted_class
 
 
+# Configure image parameters, as it was done during model development
 def preprocess_image(img_path, target_size=(128, 128)):
     img = image.load_img(img_path, target_size=target_size)
     img_array = image.img_to_array(img)
@@ -88,6 +96,7 @@ def preprocess_image(img_path, target_size=(128, 128)):
     return img_array_expanded_dims
 
 
+# Retrieve biodiversity info using OpenAI API
 def fetch_plant_info(species):
     prompt = f"Provide biodiversity information and the animals, birds, and microorganisms {species} attracts"
     try:
@@ -98,6 +107,6 @@ def fetch_plant_info(species):
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
-        return response.choices[0].message.content.strip()
+        return response.choices[0].message.content.strip()  # Retrieve the info from the response
     except Exception as e:
         return "Information not available."

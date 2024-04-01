@@ -18,12 +18,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 
-# Connect to the new plant_identifier app's urls
+# Use the plant_identifier app's urls
 urlpatterns = [
     path('', include('plant_identifier.urls')),
 ]
 
-# Server media files during development
+# Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
