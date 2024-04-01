@@ -97,7 +97,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000000;
+  color: #FFFFFF;
   padding: 0px 0px;
   font-family: Garamond, serif;
   text-align: center;
@@ -121,6 +121,26 @@ body {
 .image-container-btn:hover {
   color: #FFFFFF;
   text-decoration: none;
+}
+
+/* Slideshow animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out; /* Slowly change its opacity */
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /*Upload an image Section*/
@@ -428,6 +448,7 @@ body {
 
   #navbar-title {
     padding-left: 25px;
+    margin-bottom: 10px;
   }
 
   .navbar-toggle .bar {
@@ -484,6 +505,7 @@ body {
 
   .overlay-text{
       font-weight: 500;
+      margin-top: 50px;
   }
 
   .extra-info{
@@ -575,6 +597,10 @@ body {
 
   .image-container-btn {
     margin-bottom: 100px;
+  }
+
+  .overlay-text {
+      font-size: 3rem;
   }
 
   .extra-info{

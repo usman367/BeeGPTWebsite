@@ -3,20 +3,28 @@
 {% block title %} BeeGPT {% endblock %}
 
 {% block content %}
-<!-- Content specific to biodiversity -->
 <html>
 <head>
     <title>BeeGPT</title>
     {% load static %}
 </head>
 <body>
-    <!-- Intro Section -->
-    <div class="image-container">
-        <img src="{% static 'images/image1.webp' %}" alt="image">
-        <div class="image-container-content">
-            <div class="overlay-text">Identify plants in seconds!</div>
-            <a class="image-container-btn" href="#main-section">Try Now!</a>
+    <!-- Intro Section with the image slideshow-->
+    <div class="slideshow-container">
+        <div class="image-container mySlides fade">
+            <img src="{% static 'images/home-image1.jpg' %}" style="width:100%">
+            <div class="image-container-content">
+                <div class="overlay-text">Identify plants in seconds!</div>
+                <a class="image-container-btn" href="#main-section">Try Now!</a>
+            </div>
         </div>
+        <div class="image-container mySlides fade">
+            <img src="{% static 'images/home-image2.jpg' %}" style="width:100%">
+            <div class="image-container-content">
+                <div class="overlay-text">Learn about Plant Biodiversity</div>
+                <a class="image-container-btn" href="#main-section">Try Now!</a>
+            </div>
+          </div>
     </div>
     <!-- Upload an image Section -->
     <div class="main" id="main-section">
